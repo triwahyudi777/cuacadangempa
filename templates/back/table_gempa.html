@@ -1,0 +1,57 @@
+{% extends 'back/base.html' %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="toolbar">
+                            <a class ="btn btn-sm btn-danger" href="{% url 'sinkron_gempa' %}" > Sinkron Gempa</a> &ensp;&ensp;&ensp;
+                            <!--Here you can write extra buttons/actions for the toolbar-->
+                        </div>
+                        <table id="bootstrap-table" class="table">
+                            <thead>
+                                <th data-field="" data-sortable="true">No</th>
+                                <th data-field="jam" data-sortable="true">jam</th>
+                                <th data-field="dateTime" data-sortable="true">dateTime</th>
+                                <th data-field="coordinates" data-sortable="true">coordinates</th>
+                                <th data-field="lintang" data-sortable="true">lintang</th>
+                                <th data-field="bujur" data-sortable="true">bujur</th>
+                                <th data-field="magnitudo" data-sortable="true">magnitudo</th>
+                                <th data-field="kedalamaan" data-sortable="true">kedalamaan</th>
+                                <th data-field="potensi" data-sortable="true">potensi</th>
+                                <th data-field="dirasakan" data-sortable="true">dirasakan</th>
+                                <th data-field="shakemap" data-sortable="true">shakemap</th>
+                                <th> Actions </th>
+                            </thead>
+                            <tbody>
+                                {% for a in cuaca %}
+                                <tr>
+                                    <td></td>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{a.jam}}</td>
+                                    <td>{{a.dateTime}}</td>
+                                    <td>{{a.coordinates}}</td>
+                                    <td>{{a.lintang}}</td>
+                                    <td>{{a.bujur}}</td>
+                                    <td>{{a.magnitudo}}</td>
+                                    <td>{{a.kedalamaan}}</td>
+                                    <td>{{a.potensi}}</td>
+                                    <td>{{a.dirasakan}}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-info" href = ""> Lihat </a>
+                                        <a class="btn btn-sm btn-warning" href = ""> Edit </a>
+                                        <a class="btn btn-sm btn-danger" href = ""> Hapus </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--  end card  -->
+            </div> <!-- end col-md-12 -->
+        </div> <!-- end row -->
+    </div>
+</div>
+{% endblock content %}

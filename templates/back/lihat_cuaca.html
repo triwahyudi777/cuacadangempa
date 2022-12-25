@@ -1,0 +1,65 @@
+{% extends 'back/base.html' %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <form class="form-horizontal" method="POST">
+                        {% csrf_token %}
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                {{title}}
+                            </h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Id</label>
+                                <div class="col-md-9">
+                                    <p>{{cuaca.id}}</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Propinsi</label>
+                                <div class="col-md-9">
+                                    <p>{{cuaca.propinsi}}</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Kota</label>
+                                <div class="col-md-9">
+                                    <p>{{cuaca.kota}}</p>                 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Kecamatan</label>
+                                <div class="col-md-9">
+                                    <p>{{cuaca.kecamatan}}</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Lat</label>
+                                <div class="col-md-9">
+                                    <p>{{cuaca.lat}}</p>
+                                </div>
+                            </div><div class="form-group">
+                                <label class="col-md-3 control-label">Lon</label>
+                                <div class="col-md-9">
+                                    <p>{{cuaca.lon}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <div class="form-group">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <a class="bt btn btn-info" href="{% url 'table_cuaca' %}">Back </a>  
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end card -->
+            </div> <!--  end col-md-6  -->
+        </div>
+</div>
+{% endblock content %}

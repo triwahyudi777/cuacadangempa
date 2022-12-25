@@ -1,0 +1,41 @@
+{% extends 'back/base.html' %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="toolbar">
+                            <a class ="btn btn-sm btn-danger" href="{% url 'sinkron_cuaca' %}" > Sinkron Cuaca</a> &ensp;&ensp;&ensp;
+                            <!--Here you can write extra buttons/actions for the toolbar-->
+                        </div>
+                        <table id="bootstrap-table" class="table">
+                            <thead>
+                                <th data-field="id" data-sortable="true">ID</th>
+                                <th data-field="judul" data-sortable="true">Provinsi</th>
+                                <th data-field="tema" data-sortable="true">Kota</th>
+                                <th data-field="deskripsi" data-sortable="true">Kecamatan</th>
+                                <th data-field="isi" data-sortable="true">Lat</th>
+                                <th data-field="bujur" data-sortable="true">lon</th>
+                            </thead>
+                            <tbody>
+                                {% for a in cuaca %}
+                                <tr>
+                                    <td>{{a.id}}</td>
+                                    <td>{{a.propinsi}}</td>
+                                    <td>{{a.kota}}</td>
+                                    <td>{{a.kecamatan}}</td>
+                                    <td>{{a.lat}}</td>
+                                    <td>{{a.lon}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--  end card  -->
+            </div> <!-- end col-md-12 -->
+        </div> <!-- end row -->
+    </div>
+</div>
+{% endblock content %}

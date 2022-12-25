@@ -1,0 +1,69 @@
+{% extends 'back/base.html' %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <form class="form-horizontal" method="POST">
+                        {% csrf_token %}
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Edit Cuaca
+                            </h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Id</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="id"placeholder="Masukan Judul" class="form-control" value={{cuaca.id}}>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Propinsi</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="propinsi" class="form-control" value={{cuaca.propinsi}}>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Kota</label>
+                                <div class="col-md-9">
+                                    <textarea name="kota" id="" cols="30" rows="10" class ="form-control">{{cuaca.kota}}</textarea>                  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Kecamatan</label>
+                                <div class="col-md-9">
+                                    <textarea name="kecamatan" id="" cols="30" rows="10" class ="form-control">{{cuaca.kecamatan}}</textarea>                  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">lat</label>
+                                <div class="col-md-9">
+                                    <textarea name="lat" id="" cols="30" rows="10" class ="form-control">{{cuaca.lat}}</textarea>                  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">lon</label>
+                                <div class="col-md-9">
+                                    <textarea name="lon" cols="30" rows="10" class ="form-control">{{cuaca.lon}}</textarea>                  
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer text-right">
+                            <div class="form-group">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="btn btn-fill btn-info">
+                                        Simpan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end card -->
+            </div> <!--  end col-md-6  -->
+        </div>
+</div>
+{% endblock content %}
